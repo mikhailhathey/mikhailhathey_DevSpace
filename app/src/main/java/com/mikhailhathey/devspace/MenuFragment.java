@@ -20,7 +20,13 @@ public class MenuFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        return inflater.inflate(R.layout.fragment_menu, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_menu, container, false);
+
+        super.onCreateView(inflater, container, savedInstanceState);
+
+        visitorName();
+
+        return rootView;
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
@@ -34,7 +40,6 @@ public class MenuFragment extends Fragment {
             }
         });
 
-        visitorName();
 
         Button homeBtn = (Button) view.findViewById(R.id.homeBtn);
         homeBtn.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +79,7 @@ public class MenuFragment extends Fragment {
     }
 
     public void visitorName(){
-        Intent intent = getActivity().getIntent();
+        Intent intent = getArguments().getIntent();
         welcomeVisitor = intent.getStringExtra(LaunchFragment.EXTRA_TEXT);
 
         TextView dearVisitor = (TextView) getView().findViewById(R.id.dearVisitor);

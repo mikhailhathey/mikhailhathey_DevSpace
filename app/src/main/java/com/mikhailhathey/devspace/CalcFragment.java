@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import java.sql.Array;
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -78,7 +79,7 @@ public class CalcFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View rootView = inflater.inflate(R.layout.fragment_calc, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_calc, container, false);
 
         super.onCreateView(inflater, container, savedInstanceState);
 
@@ -106,10 +107,11 @@ public class CalcFragment extends Fragment {
         calcButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                num1input = (EditText) v.findViewById(R.id.num1input);
-                num2input = (EditText) v.findViewById(R.id.num2input);
-                num3input = (EditText) v.findViewById(R.id.num3input);
-                calcResults = (TextView) v.findViewById(R.id.calcResults);
+                num1input = (EditText) getView().findViewById(R.id.num1input);
+                num2input = (EditText) getView().findViewById(R.id.num2input);
+                num3input = (EditText) getView().findViewById(R.id.num3input);
+                calcResults = (TextView) getView().findViewById(R.id.calcResults);
+
 
                 int[] calcArray = new int[]{
                         Integer.parseInt(num1input.getText().toString()),
@@ -119,9 +121,9 @@ public class CalcFragment extends Fragment {
 
                 Arrays.sort(calcArray);
 
-                int num1 = Integer.parseInt(num1input.getText().toString());
-                int num2 = Integer.parseInt(num2input.getText().toString());
-                int num3 = Integer.parseInt(num3input.getText().toString());
+                /*num1 = Integer.parseInt(num1input.getText().toString());
+                num2 = Integer.parseInt(num2input.getText().toString());
+                num3 = Integer.parseInt(num3input.getText().toString());*/
 
                 /*if(num1input.getText().length()>0 && num2input.getText().length()>0 && num3input.getText().length()==0)
                 {
@@ -151,7 +153,8 @@ public class CalcFragment extends Fragment {
                 }*/
 
 
-                calcResults.setText("The results are:\n" + "Less than:, " + num1 + "\n" + "Middle:, " + num2 + "\n" + "Greater than:, " + num3 + "\n" );
+                //calcResults.setText("The results are:\n" + "Less than:, " + num1 + "\n" + "Middle:, " + num2 + "\n" + "Greater than:, " + num3 + "\n" );
+                calcResults.setText("The results are:\n" + "Less than:, " + calcArray[0] + "\n" + "Middle:, " + calcArray[1] + "\n" + "Greater than:, " + calcArray[2] + "\n" );
                 //calcResults.setTextColor(Color.parseColor("#2196F3"));
             }
         });

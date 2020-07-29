@@ -27,19 +27,17 @@ public class LaunchFragment extends Fragment {
             Bundle savedInstanceState
     ) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_launch, container, false);
-    }
+        final View rootView = inflater.inflate(R.layout.fragment_launch, container, false);
 
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+        super.onCreateView(inflater, container, savedInstanceState);
 
-        Button nxtBtn = (Button) getView().findViewById(R.id.mainNxtBtn);
+        Button nxtBtn = (Button) rootView.findViewById(R.id.mainNxtBtn);
 
         nxtBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                visitorNameInput = (TextInputEditText) getView().findViewById(R.id.visitorNameInput);
-                requiredNameTxtView = (TextView) getView().findViewById(R.id.requiredNameTxtView);
+                visitorNameInput = (TextInputEditText) view.findViewById(R.id.visitorNameInput);
+                requiredNameTxtView = (TextView) view.findViewById(R.id.requiredNameTxtView);
 
                 if(visitorNameInput.getText().length()>0){
                     MenuFragment();
@@ -49,6 +47,12 @@ public class LaunchFragment extends Fragment {
                 }
             }
         });
+
+        return rootView;
+    }
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+
 
         view.findViewById(R.id.mainNxtBtn).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,5 +72,6 @@ public class LaunchFragment extends Fragment {
         intent.putExtra(EXTRA_TEXT, welcomeVisitor);
 
         getActivity().startActivity(intent);
+
     }
 }
