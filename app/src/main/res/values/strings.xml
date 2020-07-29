@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">mikhailHathey DevSpace</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Launcher Screen</string>
+    <string name="second_fragment_label">Menu Screen</string>
+    <string name="next">Next</string>
+    <string name="devProfile">My Dev Profile</string>
+
+    <string name="hello_first_fragment">Visitor\'s Name</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="mikhail_hathey">
+        <a href="http://technophilia.hathey.capetown/">Mikhail Hathey</a>
+    </string>
+    <string name="visitors_name">Visitor\'s Name</string>
+    <string name="code_space">Code Space</string>
+    <string name="welcome_to_my_code_space">Welcome to my Code Space</string>
+    <string name="about_me">About Me</string>
+    <string name="calculation">Calculation</string>
+    <string name="home">Home</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="back">Back</string>
+    <string name="my_profile">My Profile</string>
+    <string name="profileTxt">I am a Software Test Analyst and I enjoy learning programming languages and fiddling around with different technologies. \n\nI have skills such as Programming, Wordpress Web Development, Software Testing, Automation Execution and Basic Mobile App Development. \n\nMy hobbies include cycling, hiking, photography and gaming. \n\nIn the future I hope to launch a few business ideas I have with the aim of improving the small and micro business industry. \n\nI\'m fun to work with in a team because I partake in team activities and I try my best to get along with everyone in the team.</string>
+    <string name="enter_3rd_number">Enter 3rd Number</string>
+    <string name="enter_2nd_number">Enter 2nd Number</string>
+    <string name="enter_1st_number">Enter 1st Number</string>
+    <string name="press_to_calculate">Press to Calculate</string>
+    <string name="results_of_calculation">Results of Calculation</string>
+    <string name="enter_3_numbers_below">Enter 3 numbers below:</string>
+    <string name="which_of_the_3_numbers_are_greater_or_less_than_the_other">Which of the 3 numbers are greater or less than the other.</string>
+    <string name="my_details">My Details</string>
+    <string name="contactNum">0747973637</string>
+    <string name="myEmail">
+                <a href="mailto:mikhail.hathey@gmail.com">mikhail.hathey@gmail.com</a>
+    </string>
+    <string name="linkedInId">
+        <a href="https://www.linkedin.com/in/mikhail-hathey/">Mikha\'il Hathey</a>
+    </string>
+    <string name="usericon">
+        <a href="http://technophilia.hathey.capetown/">userIcon</a>
+    </string>
+    <string name="phoneicon">phoneIcon</string>
+    <string name="twittericon">
+        <a href="https://twitter.com/MHathey">twitterIcon</a>
+    </string>
+    <string name="linkedinicon">
+        <a href="https://www.linkedin.com/in/mikhail-hathey/">linkedInIcon</a>
+    </string>
+    <string name="emailicon">
+        <a href="mailto:mikhail.hathey@gmail.com">emailIcon</a>
+    </string>
+    <string name="twitterHandle">
+        <a href="https://twitter.com/MHathey">@MHathey</a>
+    </string>
+</resources>
