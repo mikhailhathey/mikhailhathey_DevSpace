@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.text.method.ScrollingMovementMethod;
@@ -62,7 +63,9 @@ public class AboutFragment extends Fragment {
     }
 
 
-    public View onCreateView(View view, LayoutInflater inflater, ViewGroup container,
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_about, container, false);

@@ -83,8 +83,8 @@
         android:layout_marginEnd="132dp"
         android:layout_marginBottom="12dp"
         android:autofillHints=""
+        android:hint="@string/enter_1st_number"
         android:inputType="number"
-        android:text="@string/enter_1st_number"
         app:layout_constraintBottom_toTopOf="@+id/num2input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,14 +99,14 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="130dp"
         android:layout_marginBottom="12dp"
+        android:autofillHints=""
+        android:hint="@string/enter_2nd_number"
         android:inputType="number"
-        android:text="@string/enter_2nd_number"
         app:layout_constraintBottom_toTopOf="@+id/num3input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/num1input"
-        tools:ignore="LabelFor"
-        android:autofillHints="" />
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/num3input"
@@ -116,12 +116,12 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="131dp"
         android:layout_marginBottom="12dp"
+        android:autofillHints=""
+        android:hint="@string/enter_3rd_number"
         android:inputType="number"
-        android:text="@string/enter_3rd_number"
         app:layout_constraintBottom_toTopOf="@+id/calcButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/num2input"
-        tools:ignore="LabelFor"
-        android:autofillHints="" />
+        tools:ignore="LabelFor" />
 </androidx.constraintlayout.widget.ConstraintLayout>

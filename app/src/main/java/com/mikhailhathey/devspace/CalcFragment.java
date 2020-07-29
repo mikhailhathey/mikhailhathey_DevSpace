@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -71,7 +72,9 @@ public class CalcFragment extends Fragment {
         }
     }
 
-    public View onCreateView(View view, LayoutInflater inflater, ViewGroup container,
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
@@ -88,7 +91,24 @@ public class CalcFragment extends Fragment {
             }
         });
 
-        Button calcButton = (Button) view.findViewById(R.id.calcButton);
+        num1input = (EditText) rootView.findViewById(R.id.num1input);
+        //num1 = Integer.parseInt(num1input.getText().toString());
+
+        num2input = (EditText) rootView.findViewById(R.id.num2input);
+        //num2 = Integer.parseInt(num2input.getText().toString());
+
+        num3input = (EditText) rootView.findViewById(R.id.num3input);
+        //num3 = Integer.parseInt(num3input.getText().toString());
+
+        int[] calcArray = new int[]{
+                Integer.parseInt(num1input.getText().toString()),
+                Integer.parseInt(num1input.getText().toString()),
+                Integer.parseInt(num1input.getText().toString())};
+
+
+        Arrays.sort(calcArray);
+
+        Button calcButton = (Button) rootView.findViewById(R.id.calcButton);
         calcButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,13 +117,6 @@ public class CalcFragment extends Fragment {
                 num3input = (EditText) v.findViewById(R.id.num3input);
                 calcResults = (TextView) v.findViewById(R.id.calcResults);
                 calcResults.setTextColor(Color.parseColor("#2196F3"));
-
-                EditText[] calcArray = new EditText[]{
-                        (EditText) v.findViewById(R.id.num1input),
-                        (EditText) v.findViewById(R.id.num2input),
-                        (EditText) v.findViewById(R.id.num3input)};
-
-                Arrays.sort(calcArray);
 
                 if(num1input.getText().length()>0 && num2input.getText().length()>0 && num3input.getText().length()==0)
                 {
@@ -132,6 +145,7 @@ public class CalcFragment extends Fragment {
                     calcResults.setText("2 values required!!!");
                 }
 
+
                 calcResults.setText("The results are:\n" + "Less than:, " + num1 + "\n" + "Middle:, " + num2 + "\n" + "Greater than:, " + num3 + "\n" );
             }
         });
@@ -147,14 +161,14 @@ public class CalcFragment extends Fragment {
 
 
     public void calcLessThan(){
-        EditText num1 = calcArray[0];
+        int num1 = Integer.parseInt(num1input.getText().toString());
     }
 
     public void calcMiddle(){
-        EditText num2 = calcArray[1];
+        int num2 = Integer.parseInt(num2input.getText().toString());
     }
 
     public void calcGreaterThan(){
-        EditText num3 = calcArray[2];
+        int num3 = Integer.parseInt(num3input.getText().toString());
     }
 }
