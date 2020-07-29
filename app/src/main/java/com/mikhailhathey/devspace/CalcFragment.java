@@ -91,22 +91,16 @@ public class CalcFragment extends Fragment {
             }
         });
 
-        num1input = (EditText) rootView.findViewById(R.id.num1input);
+        /*num1input = (EditText) rootView.findViewById(R.id.num1input);
         //num1 = Integer.parseInt(num1input.getText().toString());
 
         num2input = (EditText) rootView.findViewById(R.id.num2input);
         //num2 = Integer.parseInt(num2input.getText().toString());
 
         num3input = (EditText) rootView.findViewById(R.id.num3input);
-        //num3 = Integer.parseInt(num3input.getText().toString());
-
-        int[] calcArray = new int[]{
-                Integer.parseInt(num1input.getText().toString()),
-                Integer.parseInt(num1input.getText().toString()),
-                Integer.parseInt(num1input.getText().toString())};
+        //num3 = Integer.parseInt(num3input.getText().toString());*/
 
 
-        Arrays.sort(calcArray);
 
         Button calcButton = (Button) rootView.findViewById(R.id.calcButton);
         calcButton.setOnClickListener(new View.OnClickListener() {
@@ -116,9 +110,20 @@ public class CalcFragment extends Fragment {
                 num2input = (EditText) v.findViewById(R.id.num2input);
                 num3input = (EditText) v.findViewById(R.id.num3input);
                 calcResults = (TextView) v.findViewById(R.id.calcResults);
-                calcResults.setTextColor(Color.parseColor("#2196F3"));
 
-                if(num1input.getText().length()>0 && num2input.getText().length()>0 && num3input.getText().length()==0)
+                int[] calcArray = new int[]{
+                        Integer.parseInt(num1input.getText().toString()),
+                        Integer.parseInt(num2input.getText().toString()),
+                        Integer.parseInt(num3input.getText().toString())
+                };
+
+                Arrays.sort(calcArray);
+
+                int num1 = Integer.parseInt(num1input.getText().toString());
+                int num2 = Integer.parseInt(num2input.getText().toString());
+                int num3 = Integer.parseInt(num3input.getText().toString());
+
+                /*if(num1input.getText().length()>0 && num2input.getText().length()>0 && num3input.getText().length()==0)
                 {
                     calcGreaterThan();
                 }
@@ -143,10 +148,11 @@ public class CalcFragment extends Fragment {
                 {
                     calcResults.setTextColor(Color.parseColor("#FF0000"));
                     calcResults.setText("2 values required!!!");
-                }
+                }*/
 
 
                 calcResults.setText("The results are:\n" + "Less than:, " + num1 + "\n" + "Middle:, " + num2 + "\n" + "Greater than:, " + num3 + "\n" );
+                //calcResults.setTextColor(Color.parseColor("#2196F3"));
             }
         });
 
