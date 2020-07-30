@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_launch">
 
         <action
-            android:id="@+id/action_MenuFragment_to_LaunchFragment"
+            android:id="@+id/action_LaunchFragment_to_MenuFragment"
             app:destination="@id/MenuFragment" />
     </fragment>
     <fragment
@@ -22,9 +22,6 @@
         tools:layout="@layout/fragment_menu">
 
         <action
-            android:id="@+id/action_MenuFragment_to_LaunchFragment"
-            app:destination="@id/LaunchFragment" />
-        <action
             android:id="@+id/action_MenuFragment_to_devProfileFragment"
             app:destination="@id/devProfileFragment" />
         <action
@@ -33,6 +30,9 @@
         <action
             android:id="@+id/action_MenuFragment_to_calcFragment"
             app:destination="@id/calcFragment" />
+        <action
+            android:id="@+id/action_MenuFragment_to_LaunchFragment"
+            app:destination="@id/LaunchFragment" />
     </fragment>
     <fragment
         android:id="@+id/devProfileFragment"

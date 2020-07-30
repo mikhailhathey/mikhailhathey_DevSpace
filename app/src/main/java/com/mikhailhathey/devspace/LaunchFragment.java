@@ -1,6 +1,5 @@
 package com.mikhailhathey.devspace;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,51 +26,39 @@ public class LaunchFragment extends Fragment {
             Bundle savedInstanceState
     ) {
         // Inflate the layout for this fragment
-        final View rootView = inflater.inflate(R.layout.fragment_launch, container, false);
+        return inflater.inflate(R.layout.fragment_launch, container, false);
+    }
 
-        super.onCreateView(inflater, container, savedInstanceState);
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-        Button nxtBtn = (Button) rootView.findViewById(R.id.mainNxtBtn);
+        Button nxtBtn = (Button) getView().findViewById(R.id.mainNxtBtn);
 
         nxtBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                visitorNameInput = (TextInputEditText) view.findViewById(R.id.visitorNameInput);
-                requiredNameTxtView = (TextView) view.findViewById(R.id.requiredNameTxtView);
+                visitorNameInput = (TextInputEditText) getView().findViewById(R.id.visitorNameInput);
+                requiredNameTxtView = (TextView) getView().findViewById(R.id.requiredNameTxtView);
 
                 if(visitorNameInput.getText().length()>0){
-                    MenuFragment();
+                    toMenuFrag();
                 }
                 else{
                     requiredNameTxtView.setText("Error: Name is required");
                 }
             }
         });
-
-        return rootView;
     }
 
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-
-
-        view.findViewById(R.id.mainNxtBtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(LaunchFragment.this)
-                        .navigate(R.id.action_MenuFragment_to_LaunchFragment);
-            }
-        });
-    }
-
-    public void MenuFragment()
+    public void toMenuFrag()
     {
         visitorNameInput = (TextInputEditText) getView().findViewById(R.id.visitorNameInput);
         welcomeVisitor = "Dear " + visitorNameInput.getText().toString();
 
-        Intent intent = new Intent(getActivity(), MenuFragment.class);
-        intent.putExtra(EXTRA_TEXT, welcomeVisitor);
+        Bundle visitorBundle = new Bundle();
+        visitorBundle.putString(EXTRA_TEXT, welcomeVisitor);
 
-        getActivity().startActivity(intent);
-
+        NavHostFragment.findNavController(this)
+                .navigate(R.id.action_LaunchFragment_to_MenuFragment, visitorBundle);
     }
 }
