@@ -44,4 +44,6 @@ public class AboutFragmentTest {
         /*onView(withId(R.id.aboutBtn))
                 .perform(swipeUp());*/
     }
+
+
 }
